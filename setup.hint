@@ -1,0 +1,6 @@
+category: Database OCaml
+requires: cygwin libct3 ocaml
+sdesc: "OCaml FreeTDS ct-lib bindings"
+ldesc: "OCaml-FreeTDS is a binding to the ct-lib component of the 
+FreeTDS library, for accessing Sybase and Microsoft (or other TDS) 
+database servers."

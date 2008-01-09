@@ -1,0 +1,20 @@
+inherit ocaml
+
+DESCRIPTION="OCaml FreeTDS ct-lib bindings"
+HOMEPAGE="http://kenn.frap.net/ocaml-freetds/"
+SRC_URI="http://kenn.frap.net/ocaml-freetds/${P}.tar.bz2"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	./configure --freetds-incdir /usr/include/freetds || error "configure failed"
+	cygmake all opt
+}
+
+src_install() {
+	cd ${B}
+	ocaml_install
+
+	insinto ${OCAML_LIBDIR}/freetds
+	doins freetds.a freetds.cmxa
+}
